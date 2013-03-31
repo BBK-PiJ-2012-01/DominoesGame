@@ -292,18 +292,8 @@ public class DominoUIImpl implements Initializable, DominoUI {
         this.player2PointsLabel.setText(Integer.toString(this.playerTwo.getPoints()));
         this.boneyardBoneCountLabel.setText(Integer.toString(this.boneyard.size()));
 
-        if (!this.playerOne.getIsHuman()) {
-            //ai1BoneCountLabel.setText(Integer.toString(this.playerOne.numInHand()));
-        } else {
-            ai1BoneCountLabel.setText("-");
-
-        }
-
-        if (!this.playerTwo.getIsHuman()) {
-            //ai2BoneCountLabel.setText(Integer.toString(this.playerTwo.numInHand()));
-        } else {
-            ai2BoneCountLabel.setText("-");
-        }
+        ai1BoneCountLabel.setText(Integer.toString(this.playerOne.numInHand()));
+        ai2BoneCountLabel.setText(Integer.toString(this.playerTwo.numInHand()));
 
     }
 
