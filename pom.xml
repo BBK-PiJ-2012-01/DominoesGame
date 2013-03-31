@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>spacebones</groupId>
+  <artifactId>spacebones</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SpaceBones</name>
+  <organization>
+    <name>Team Happy Dominoes</name>
+  </organization>
+
+  <developers>
+      <developer>
+          <name>Sam Wright</name>
+          <roles>
+              <role>Created AI based on MinMax algorithm</role>
+          </roles>
+      </developer>
+      <developer>
+          <name>Tom Nealon</name>
+          <roles>
+              <role>Created rule-based AI</role>
+          </roles>
+      </developer>
+      <developer>
+          <name>Hisham Khalifa</name>
+          <roles>
+              <role>Created GUI and integrated it with the Dominoes Game</role>
+          </roles>
+      </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+      <slf4j.version>1.6.1</slf4j.version>
+
+  </properties>
+
+  <dependencies>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.10</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>dominoes</groupId>
+          <artifactId>dominoes-supplied</artifactId>
+          <version>1.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+          <version>1.9.0</version>
+      </dependency>
+
+  </dependencies>
+
+
+
+  <repositories>
+      <repository>
+          <id>repo</id>
+          <url>https://github.com/BBK-PiJ-2012-01/maven-repo/raw/master/releases</url>
+      </repository>
+  </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <mainClass>dominoes.SpaceBones</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <fork>true</fork>
+                    <meminitial>128m</meminitial>
+                    <maxmem>2048m</maxmem>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
