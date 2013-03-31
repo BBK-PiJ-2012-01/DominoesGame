@@ -1,1 +1,12 @@
 Team project between Sam Wright, Tom Nealon and Hisham Khalifa.
+
+To compile, you'll need JavaFX in your java path.  Unfortunately this isn't the default (but will be in Java 8).  To fix
+this, run:
+    mvn com.zenjava:javafx-maven-plugin:1.2:fix-classpath
+with privileges sufficient for creating files in the Java distribution.
+
+You'll need jdk1.7.0_17 (there's a bug on earlier versions of Java 7 which will cause the application to crash) and
+maven.
+
+To run, go to the project directory (which contains the pom.xml file) and run:
+    mvn jfx:run
