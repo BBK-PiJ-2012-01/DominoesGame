@@ -147,7 +147,7 @@ public class DominoUIImpl implements Initializable, DominoUI {
 
     public void setDrawButtonDisable(boolean b) {
 
-        drawButton.setDisable(true);
+        drawButton.setDisable(b);
     }
 
     public void drawButtonRename() {
@@ -237,6 +237,7 @@ public class DominoUIImpl implements Initializable, DominoUI {
     @FXML
     private void drawButtonAction(ActionEvent event) {
         setDrawButtonDisable(true);
+        submitPlay();
     }
 
     @FXML
@@ -368,6 +369,13 @@ public class DominoUIImpl implements Initializable, DominoUI {
         makePlayShowAndWaitStage.showAndWait();
 
         return new Play(getPlayMade(), getPlaySideMade());
+    }
+
+    public void drawBone() {
+        // Dummy stage - We just want to wait for draw button click before returning WITHOUT BLOCKING any other windows.
+        makePlayShowAndWaitStage = new Stage();
+        makePlayShowAndWaitStage.initModality(Modality.NONE);
+        makePlayShowAndWaitStage.showAndWait();
     }
 
     public void delayAIPlay(DominoPlayer player, Table table) {

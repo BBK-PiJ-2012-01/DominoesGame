@@ -32,6 +32,8 @@ public class PlayerProxy implements DominoPlayer {
         } catch (CantPlayException e) {
             this.control.drawButtonRename(); // Rename to Pass if boneyard is 0.
             this.control.setDrawButtonDisable(false);
+            this.control.drawBone();
+            System.out.println("Can't play - need to draw a bone or pass if boneyard is empty.");
             throw e;
         }
 
