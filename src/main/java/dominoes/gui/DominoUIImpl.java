@@ -352,8 +352,8 @@ public class DominoUIImpl implements Initializable, DominoUI {
         this.currentPlayer = (PlayerProxy) player;
 
         updatePlayerBonesBox(this.currentPlayer);
-        updateTable(table);
-
+        
+        printTable(table);
         printOptions(player);
 
         Boolean boneDropped = false;
@@ -370,7 +370,9 @@ public class DominoUIImpl implements Initializable, DominoUI {
         lastPlayer = player;
         this.currentPlayer = (PlayerProxy) player;
         updatePlayerBonesBox(this.currentPlayer);
-        updateTable(table);
+        
+        printTable(table);
+        printOptions(player);
 
         lastPlayer = player;
         if ((lastPlayer != player) || (lastPlayer == null)) {
@@ -435,7 +437,12 @@ public class DominoUIImpl implements Initializable, DominoUI {
 
     }
 
-    void submitPlay() {
+    /**
+     * Delegate method called when a bone is dropped on the table.
+     *
+     * Closes modal dummy stage.
+     */
+    public void submitPlay() {
         if (makePlayShowAndWaitStage != null) {
             makePlayShowAndWaitStage.close();
             makePlayShowAndWaitStage = null;
@@ -475,7 +482,7 @@ public class DominoUIImpl implements Initializable, DominoUI {
         System.out.print("[" + bone.left() + "," + bone.right() + "]");
     }
 
-    public void updateTable(Table table) {
+    public void printTable(Table table) {
         Bone[] layout = table.layout();
         System.out.print("Table: ");
         for (Bone eachBone : layout) {
