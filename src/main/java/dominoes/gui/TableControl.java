@@ -9,7 +9,7 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 
 /**
- * TableControle Controller
+ * TableControl Controller
  *
  * @author Hisham Khalifa
  */
