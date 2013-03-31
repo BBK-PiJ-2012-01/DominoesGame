@@ -37,7 +37,6 @@ public class BoneControl extends VBox {
     @FXML
     private Label right;
 
-
         public BoneControl() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/BoneControl.fxml"));
         fxmlLoader.setRoot(this);
@@ -115,8 +114,6 @@ public class BoneControl extends VBox {
             public void handle(MouseEvent event) {
                 BoneControl source = (BoneControl) event.getSource();
 
-                //source.setVisible(false);
-                 
                 Dragboard db = source.startDragAndDrop(TransferMode.ANY);
                 ClipboardContent content = new ClipboardContent();
                 
