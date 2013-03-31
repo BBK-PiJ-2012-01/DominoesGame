@@ -498,7 +498,7 @@ public class DominoUIImpl implements Initializable, DominoUI {
     }
 
     private void printOptions(DominoPlayer player) {
-        System.out.println("Player options: ");
+        System.out.println(player.getName() + " bones in hand: ");
         Bone[] hand = player.bonesInHand();
         int option = 0;
         for (Bone eachBone : hand) {
